@@ -1,0 +1,2503 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDEN HANDICRAFTS ENTERPRISE | এদন হস্তশিল্প এন্টারপ্রাইজ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --forest-dark: #1b4332;
+            --forest-mid: #2d6a4f;
+            --bamboo-brown: #8c5a2b;
+            --bamboo-light: #d4a373;
+            --amber-accent: #d97706;
+            --cream-bg: #faf8f5;
+            --sand-card: #ffffff;
+            --border-soft: #e6dfd5;
+            --text-main: #28231d;
+            --text-muted: #6b6054;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--cream-bg);
+            color: var(--text-main);
+        }
+
+        /* Notice Bar with Marquee + Typewriter Effect */
+        .notice-bar {
+            background: linear-gradient(90deg, var(--forest-dark), var(--bamboo-brown), var(--forest-mid));
+            color: #fff;
+            padding: 10px 0;
+            font-size: 14px;
+            font-weight: 600;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .marquee-track {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee-scroll 18s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        .typewriter-caret {
+            display: inline-block;
+            margin-left: 3px;
+            font-weight: 900;
+            color: #e9c46a;
+            animation: caret-blink 0.75s infinite;
+        }
+        @keyframes caret-blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        /* Main Header */
+        .header-main {
+            background: #fff;
+            border-bottom: 2px solid var(--border-soft);
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            box-shadow: 0 3px 12px rgba(40, 35, 29, 0.05);
+        }
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 14px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        /* Custom Logo & Brand Identity */
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .custom-svg-logo {
+            width: 58px;
+            height: 58px;
+            flex-shrink: 0;
+        }
+        .brand-titles .bn-main-title {
+            font-size: 23px;
+            font-weight: 900;
+            color: var(--forest-dark);
+            line-height: 1.15;
+            display: block;
+        }
+        .brand-titles .en-sub-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--bamboo-brown);
+            letter-spacing: 0.7px;
+            display: block;
+            margin-top: 2px;
+        }
+        .brand-titles .tagline {
+            font-size: 11px;
+            color: var(--forest-mid);
+            font-weight: 600;
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* Pill Search Bar */
+        .search-pill {
+            display: flex;
+            align-items: center;
+            background: var(--cream-bg);
+            border: 1.5px solid #d5cabd;
+            border-radius: 30px;
+            padding: 6px 14px;
+            width: 270px;
+            transition: 0.2s;
+        }
+        .search-pill:focus-within {
+            border-color: var(--forest-mid);
+            background: #fff;
+        }
+        .search-pill input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            font-size: 13px;
+            color: var(--text-main);
+        }
+        .search-pill button {
+            background: var(--forest-dark);
+            color: #fff;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .action-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .action-chip:hover {
+            background: var(--cream-bg);
+        }
+        .action-chip i {
+            font-size: 18px;
+            color: var(--bamboo-brown);
+        }
+        .action-chip .chip-title {
+            font-size: 12.5px;
+            font-weight: 800;
+            color: var(--forest-dark);
+            display: block;
+            line-height: 1.1;
+        }
+        .action-chip .chip-sub {
+            font-size: 10.5px;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        /* Category Navigation Strip */
+        .cat-nav {
+            background: #f3efe8;
+            border-bottom: 1px solid var(--border-soft);
+        }
+        .cat-nav ul {
+            max-width: 1300px;
+            margin: 0 auto;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 15px;
+            flex-wrap: wrap;
+        }
+        .cat-nav ul li a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.25s;
+            display: inline-block;
+        }
+        .cat-nav ul li a:hover {
+            background: var(--forest-dark);
+            color: #fff;
+        }
+
+        /* Page Sections */
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+
+        /* Hero Slideshow */
+        .hero-wrap {
+            max-width: 1300px;
+            margin: 22px auto;
+            padding: 0 20px;
+        }
+        .hero-card {
+            background: linear-gradient(120deg, rgba(27, 67, 50, 0.92), rgba(140, 90, 43, 0.85)),
+                        url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1400') center/cover no-repeat;
+            border-radius: 16px;
+            padding: 46px 48px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            box-shadow: 0 10px 25px rgba(27, 67, 50, 0.15);
+            transition: background-image 0.7s ease-in-out;
+        }
+        .hero-left {
+            max-width: 660px;
+        }
+        .eco-pill-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+        .hero-left h2 {
+            font-size: 32px;
+            line-height: 1.25;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        .hero-left p {
+            font-size: 15px;
+            color: #f1ede6;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+        .hero-cta {
+            background: #e9c46a;
+            color: #1b4332;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.25s;
+        }
+        .hero-cta:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .artisan-badge-card {
+            background: rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 14px;
+            padding: 20px 24px;
+            min-width: 275px;
+        }
+        .artisan-badge-card h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #e9c46a;
+            margin-bottom: 10px;
+        }
+        .artisan-badge-card p {
+            font-size: 13.5px;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        /* Products & Categories Container */
+        .container {
+            max-width: 1300px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+        .category-block {
+            margin-bottom: 50px;
+        }
+        .category-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--border-soft);
+            padding-bottom: 10px;
+            margin-bottom: 24px;
+        }
+        .section-title {
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--forest-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            content: '';
+            width: 8px;
+            height: 24px;
+            background: var(--bamboo-brown);
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .cat-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+        @media(max-width: 1024px) {
+            .products-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .product-card {
+            background: var(--sand-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(140, 90, 43, 0.12);
+            border-color: var(--bamboo-light);
+        }
+        .card-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 235px;
+            overflow: hidden;
+            background: #f2ede4;
+        }
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+        .product-card:hover .card-img-wrap img {
+            transform: scale(1.05);
+        }
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--amber-accent);
+            color: #fff;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            z-index: 2;
+        }
+        .badge.hot {
+            background: var(--amber-accent);
+            color: #fff;
+        }
+
+        .card-body {
+            padding: 15px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+        }
+        .card-cat-tag {
+            font-size: 11px;
+            color: var(--forest-mid);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .product-card h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            cursor: pointer;
+            line-height: 1.35;
+        }
+        .product-card h3:hover {
+            color: var(--bamboo-brown);
+        }
+        .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border-soft);
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #9c9286;
+            font-size: 12.5px;
+            margin-right: 6px;
+        }
+        .new-price {
+            color: #b91c1c;
+            font-size: 17px;
+            font-weight: 800;
+        }
+        .btn-buy-only {
+            background: var(--forest-dark);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-buy-only:hover {
+            background: var(--bamboo-brown);
+        }
+        .btn-stock-out {
+            background: #a8a29e;
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: not-allowed;
+        }
+
+        /* View All Button */
+        .view-all-wrap {
+            text-align: center;
+            margin-top: 24px;
+        }
+        .btn-view-all {
+            background: transparent;
+            color: var(--forest-dark);
+            border: 2px solid var(--forest-dark);
+            padding: 9px 28px;
+            border-radius: 25px;
+            font-size: 13.5px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-view-all:hover {
+            background: var(--forest-dark);
+            color: #fff;
+        }
+
+        .empty-notice-box {
+            background: #fff;
+            border: 2px dashed var(--bamboo-light);
+            padding: 40px;
+            text-align: center;
+            border-radius: 12px;
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+        }
+
+        /* Product Details Page */
+        .details-container-wrap {
+            max-width: 1120px;
+            margin: 35px auto;
+            background: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        }
+        .details-top { display: flex; gap: 40px; flex-wrap: wrap; }
+        .gallery-column { width: 430px; max-width: 100%; flex-shrink: 0; }
+        .zoom-box {
+            width: 100%;
+            height: 410px;
+            overflow: hidden;
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            position: relative;
+            cursor: zoom-in;
+        }
+        .zoom-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .thumb-strip {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .thumb-item {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+            border: 2px solid var(--border-soft);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .thumb-item.active-thumb, .thumb-item:hover {
+            border-color: var(--bamboo-brown);
+        }
+
+        .details-info { flex: 1; min-width: 280px; }
+        .details-info h2 { font-size: 25px; margin-bottom: 10px; color: var(--forest-dark); }
+        .in-stock-badge { background: var(--forest-mid); color: white; display: inline-block; padding: 4px 12px; font-size: 12px; border-radius: 20px; font-weight: bold; margin-bottom: 14px; }
+        .out-stock-badge { background: #dc2626; color: white; display: inline-block; padding: 4px 12px; font-size: 12px; border-radius: 20px; font-weight: bold; margin-bottom: 14px; }
+        .details-info .price-area { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .details-info .old-p { text-decoration: line-through; color: #9c9286; font-size: 18px; }
+        .details-info .new-p { color: #b91c1c; font-size: 26px; font-weight: 800; }
+        .product-desc-box {
+            background: var(--cream-bg);
+            padding: 14px 16px;
+            border-left: 4px solid var(--bamboo-brown);
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.65;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+        .selection-group { margin-bottom: 14px; }
+        .selection-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; color: var(--forest-dark); }
+        .selection-group select { padding: 10px; width: 250px; border: 1px solid #d5cabd; border-radius: 8px; font-size: 14px; outline: none; background: #fff; }
+
+        .qty-buy-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+            padding: 20px 0;
+        }
+        .qty-selector { display: flex; align-items: center; border: 1px solid #d5cabd; border-radius: 8px; overflow: hidden; }
+        .qty-btn { background: var(--cream-bg); border: none; padding: 10px 15px; cursor: pointer; font-weight: bold; font-size: 16px; color: var(--forest-dark); }
+        .qty-input { width: 50px; text-align: center; border: none; font-size: 16px; font-weight: bold; outline: none; background: #fff; }
+        .buy-now-big {
+            background: var(--bamboo-brown);
+            color: white;
+            border: none;
+            padding: 12px 36px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .buy-now-big:hover { background: var(--forest-dark); }
+
+        /* Star Reviews */
+        .reviews-section {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-soft);
+        }
+        .reviews-section h3 {
+            font-size: 19px;
+            margin-bottom: 15px;
+            color: var(--forest-dark);
+        }
+        .review-form-box {
+            background: var(--cream-bg);
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border-soft);
+            margin-bottom: 20px;
+        }
+        .star-rating-picker {
+            display: flex;
+            gap: 6px;
+            font-size: 25px;
+            cursor: pointer;
+            color: #d5cabd;
+            margin-bottom: 12px;
+        }
+        .star-rating-picker .star.active {
+            color: #d97706;
+        }
+        .review-item {
+            background: #fff;
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+        }
+        .review-stars {
+            color: #d97706;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        /* Checkout Page */
+        .checkout-container {
+            max-width: 1100px;
+            margin: 35px auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+        @media(max-width: 768px) {
+            .checkout-container { grid-template-columns: 1fr; }
+        }
+        .checkout-form, .order-summary {
+            background: #fff;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid var(--border-soft);
+        }
+        .checkout-form h3, .order-summary h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            border-bottom: 2px solid var(--bamboo-brown);
+            padding-bottom: 10px;
+            color: var(--forest-dark);
+        }
+        .f-group { margin-bottom: 15px; }
+        .f-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; color: var(--text-main); }
+        .f-group input, .f-group textarea, .f-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d5cabd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+        .summary-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-size: 14px; }
+        .summary-total { display: flex; justify-content: space-between; font-weight: bold; font-size: 18px; border-top: 1px solid var(--border-soft); padding-top: 15px; margin-top: 15px; color: var(--forest-dark); }
+        
+        .payment-box {
+            border: 1px solid #d5cabd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background: var(--cream-bg);
+        }
+        .payment-box > label { font-weight: bold; font-size: 14px; cursor: pointer; margin-bottom: 10px; display: block; }
+        .gateway-selector { display: none; gap: 10px; margin-top: 10px; margin-bottom: 12px; }
+        .gateway-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #d5cabd;
+            border-radius: 8px;
+            background: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .gateway-btn.bkash-active { border-color: #e2136e; background: #fdf2f7; color: #e2136e; }
+        .gateway-btn.nagad-active { border-color: #f6921e; background: #fff8f0; color: #f6921e; }
+
+        .mobile-pay-details { display: none; padding: 15px; border-radius: 8px; margin-top: 10px; }
+        .mobile-pay-details.bkash-theme { background: #fdf2f7; border: 1px solid #e2136e; }
+        .mobile-pay-details.nagad-theme { background: #fff8f0; border: 1px solid #f6921e; }
+        .copy-num-badge {
+            display: inline-block;
+            background: #1b4332;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+        .place-order-btn {
+            width: 100%;
+            background: var(--forest-dark);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.25s;
+        }
+        .place-order-btn:hover { background: var(--bamboo-brown); }
+
+        /* Account & Admin Panel */
+        .auth-container {
+            max-width: 1120px;
+            margin: 35px auto;
+            background: #fff;
+            padding: 35px;
+            border-radius: 14px;
+            border: 1px solid var(--border-soft);
+        }
+        .auth-container h2 { text-align: center; margin-bottom: 25px; font-size: 22px; color: var(--forest-dark); }
+        .auth-btn {
+            width: 100%;
+            background: var(--forest-dark);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+        .auth-btn:hover { background: var(--bamboo-brown); }
+        .switch-text { text-align: center; margin-top: 15px; font-size: 13px; color: var(--text-muted); cursor: pointer; }
+        
+        .admin-add-box {
+            background: var(--cream-bg);
+            border: 1.5px solid var(--bamboo-light);
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .admin-form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+        .admin-table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; }
+        .admin-table th, .admin-table td { border: 1px solid var(--border-soft); padding: 10px; text-align: left; font-size: 12px; vertical-align: middle; }
+        .admin-table th { background: var(--forest-dark); color: white; }
+        .status-select { padding: 4px; border-radius: 4px; font-weight: bold; font-size: 11px; }
+        .action-btn-sm { border: none; padding: 5px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; color: white; margin: 2px 0; display: inline-block; }
+
+        /* Info Pages */
+        .info-page-container {
+            max-width: 1000px;
+            margin: 35px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 14px;
+            border: 1px solid var(--border-soft);
+            line-height: 1.8;
+        }
+        .info-page-container h2 { font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid var(--bamboo-brown); padding-bottom: 10px; color: var(--forest-dark); }
+        .info-page-container p { font-size: 15px; color: var(--text-main); margin-bottom: 12px; }
+
+        /* Social Icon in Footer */
+        .social-links-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .fb-circle-link {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #1877f2;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .fb-circle-link:hover {
+            transform: scale(1.08);
+        }
+
+        /* Footer */
+        footer {
+            background: #14281d;
+            color: #cbd5c0;
+            padding: 50px 30px 20px;
+            margin-top: 60px;
+            font-size: 14px;
+            border-top: 5px solid var(--bamboo-brown);
+        }
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: #e9c46a;
+            margin-bottom: 15px;
+            font-size: 15px;
+            text-transform: uppercase;
+            border-left: 3px solid var(--bamboo-brown);
+            padding-left: 10px;
+        }
+        .footer-col p { color: #cbd5c0; line-height: 1.65; margin-bottom: 6px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 8px; }
+        .footer-col ul li a { color: #cbd5c0; text-decoration: none; cursor: pointer; transition: 0.25s; }
+        .footer-col ul li a:hover { color: #e9c46a; padding-left: 4px; }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 20px;
+            font-size: 13px;
+            color: #9eb09a;
+        }
+
+        /* WhatsApp Float */
+        @keyframes pulse-eco {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25d366;
+            color: #fff;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse-eco 1.8s infinite;
+        }
+
+        /* Mobile Responsive Layout */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 10px 12px;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            .custom-svg-logo {
+                width: 42px;
+                height: 42px;
+            }
+            .brand-titles .bn-main-title {
+                font-size: 16px;
+            }
+            .brand-titles .en-sub-title {
+                font-size: 9.5px;
+            }
+            .brand-titles .tagline {
+                font-size: 8.5px;
+            }
+            .search-pill {
+                order: 3;
+                width: 100%;
+                padding: 5px 12px;
+            }
+            .header-actions {
+                gap: 6px;
+            }
+            .action-chip {
+                padding: 4px 6px;
+                gap: 5px;
+            }
+            .action-chip i {
+                font-size: 14px;
+            }
+            .action-chip .chip-title {
+                font-size: 10px;
+            }
+            .action-chip .chip-sub {
+                font-size: 8px;
+            }
+            .hero-card {
+                padding: 25px 20px;
+            }
+            .hero-left h2 {
+                font-size: 21px;
+            }
+            .hero-left p {
+                font-size: 12.5px;
+            }
+            .artisan-badge-card {
+                width: 100%;
+                padding: 14px 16px;
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .card-img-wrap {
+                height: 155px;
+            }
+            .card-body {
+                padding: 10px;
+            }
+            .product-card h3 {
+                font-size: 13px;
+            }
+            .new-price {
+                font-size: 14px;
+            }
+            .btn-buy-only {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+            .zoom-box {
+                height: 290px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notice Bar with Marquee + Typewriter Effect -->
+    <div id="dynamicNoticeBar" class="notice-bar" style="display: none;">
+        <div class="marquee-track">
+            <span id="typewriterNoticeText"></span><span class="typewriter-caret">|</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-main">
+        <div class="header-inner">
+            <div class="brand-box" onclick="navigateToPage('home', true)">
+                <!-- Custom Bamboo & Leaf SVG Logo -->
+                <svg class="custom-svg-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="28" y="18" width="9" height="22" rx="3" fill="#2d6a4f"/>
+                    <rect x="28" y="43" width="9" height="24" rx="3" fill="#1b4332"/>
+                    <rect x="28" y="70" width="9" height="18" rx="3" fill="#2d6a4f"/>
+                    <rect x="44" y="10" width="10" height="25" rx="3" fill="#8c5a2b"/>
+                    <rect x="44" y="38" width="10" height="26" rx="3" fill="#a47148"/>
+                    <rect x="44" y="67" width="10" height="21" rx="3" fill="#8c5a2b"/>
+                    <path d="M55 24 C72 14, 86 20, 84 28 C74 32, 62 30, 55 24 Z" fill="#40916c"/>
+                    <path d="M55 46 C74 42, 88 50, 82 58 C70 59, 60 54, 55 46 Z" fill="#2d6a4f"/>
+                    <path d="M27 32 C12 24, 6 32, 12 38 C19 40, 24 36, 27 32 Z" fill="#52b788"/>
+                    <path d="M22 86 Q50 96 78 86" stroke="#8c5a2b" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                </svg>
+                <div class="brand-titles">
+                    <span class="bn-main-title">এদন হস্তশিল্প এন্টারপ্রাইজ</span>
+                    <span class="en-sub-title">EDEN HANDICRAFTS ENTERPRISE</span>
+                    <span class="tagline">প্রাকৃতিক ও পরিবেশবান্ধব বাঁশ - বেত শিল্প</span>
+                </div>
+            </div>
+
+            <div class="search-pill">
+                <input type="text" id="searchInput" placeholder="বাঁশ ও বেতের পণ্য খুঁজুন..." onkeyup="liveSearch()">
+                <button onclick="triggerSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <a href="tel:01406205705" class="action-chip">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <span class="chip-title">01406205705</span>
+                        <span class="chip-sub">সরাসরি কল করুন</span>
+                    </div>
+                </a>
+                <div class="action-chip" onclick="filterCategory('Special Offers')">
+                    <i class="fa-solid fa-tag"></i>
+                    <div>
+                        <span class="chip-title">OFFERS</span>
+                        <span class="chip-sub">বিশেষ ছাড়</span>
+                    </div>
+                </div>
+                <div class="action-chip" onclick="navigateToPage('account')">
+                    <i class="fa-solid fa-user-circle"></i>
+                    <div>
+                        <span class="chip-title">ACCOUNT</span>
+                        <span class="chip-sub">Login / Admin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Navigation -->
+        <nav class="cat-nav">
+            <ul>
+                <li><a onclick="navigateToPage('home', true)">হোম (Home)</a></li>
+                <li><a onclick="filterCategory('Special Offers')">Special Offers</a></li>
+                <li><a onclick="filterCategory('বাঁশের পণ্য (Bamboo)')">বাঁশের পণ্য</a></li>
+                <li><a onclick="filterCategory('বেতের পণ্য (Cane)')">বেতের পণ্য</a></li>
+                <li><a onclick="filterCategory('হোম ডেকোর (Home Decor)')">হোম ডেকোর</a></li>
+                <li><a onclick="filterCategory('কিচেন ও ডাইনিং (Kitchen)')">কিচেন ও ডাইনিং</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page-section active">
+        <!-- Hero Banner Slideshow -->
+        <div class="hero-wrap" id="heroSlider">
+            <div class="hero-card" id="heroCardBg">
+                <div class="hero-left">
+                    <div class="eco-pill-tag"><i class="fa-solid fa-seedling"></i> ১০০% প্রাকৃতিক ও হাতে তৈরি হস্তশিল্প</div>
+                    <h2 id="slideTitle">প্রকৃতির ছোঁয়ায় আপনার ঘর থাকুক সুন্দর ও নান্দনিক</h2>
+                    <p id="slideDesc">নওগাঁর বদলগাছীর দক্ষ কারিগরদের হাতে নিপুণভাবে তৈরি পরিবেশবান্ধব বাঁশ ও বেতের আসবাব, ঝুড়ি, ল্যাম্পশেড এবং ঘর সাজানোর নান্দনিক সামগ্রী।</p>
+                    <a href="#shop" class="hero-cta"><i class="fa-solid fa-basket-shopping"></i> পণ্যসমূহ দেখুন</a>
+                </div>
+                <div class="artisan-badge-card">
+                    <h4><i class="fa-solid fa-award"></i> কারিগর ও ঠিকানা</h4>
+                    <p><b>প্রতিষ্ঠান:</b> এদন হস্তশিল্প এন্টারপ্রাইজ</p>
+                    <p><b>মূল কারিগর:</b> পলাশ সরেন</p>
+                    <p><b>ঠিকানা:</b> জিয়ল (সইতোল), বদলগাছী, নওগাঁ</p>
+                    <p><b>মোবাইল:</b> 01406205705</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Container -->
+        <div class="container" id="shop">
+            <div id="productGridContainer"></div>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAILS PAGE -->
+    <div id="productPage" class="page-section">
+        <div class="details-container-wrap">
+            <div class="details-top">
+                <div class="gallery-column">
+                    <div class="zoom-box" onmousemove="zoomIn(event)" onmouseleave="zoomOut(event)">
+                        <img id="mainProductImg" src="" alt="Product">
+                    </div>
+                    <div class="thumb-strip" id="productThumbnails"></div>
+                </div>
+                <div class="details-info">
+                    <h2 id="productTitle">Product Name</h2>
+                    <div id="stockBadgeArea"></div>
+                    <div class="price-area">
+                        <span class="old-p" id="productOldPrice">৳ 0</span>
+                        <span class="new-p" id="productPrice">৳ 0</span>
+                    </div>
+
+                    <div class="product-desc-box" id="productDescriptionBox"></div>
+
+                    <div class="selection-group">
+                        <label>Finish / Color (রঙ বা ফিনিশিং নির্বাচন করুন):</label>
+                        <select id="selectedColor"></select>
+                    </div>
+
+                    <div class="selection-group">
+                        <label>Size / Dimension (সাইজ নির্বাচন করুন):</label>
+                        <select id="selectedSize"></select>
+                    </div>
+
+                    <div class="qty-buy-box" id="detailBuySection">
+                        <div class="qty-selector">
+                            <button class="qty-btn" onclick="changeQty(-1)">-</button>
+                            <input type="text" id="productQty" class="qty-input" value="1" readonly>
+                            <button class="qty-btn" onclick="changeQty(1)">+</button>
+                        </div>
+                        <button class="buy-now-big" onclick="goToCheckout()">অর্ডার করুন (Buy Now)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Star Reviews -->
+            <div class="reviews-section">
+                <h3>কাস্টমার রিভিউ (Customer Reviews)</h3>
+                <div class="review-form-box">
+                    <div class="f-group">
+                        <label>রেটিং দিন (স্টারে ক্লিক করুন):</label>
+                        <div class="star-rating-picker" id="starPicker">
+                            <span class="star active" onclick="setRating(1)">★</span>
+                            <span class="star active" onclick="setRating(2)">★</span>
+                            <span class="star active" onclick="setRating(3)">★</span>
+                            <span class="star active" onclick="setRating(4)">★</span>
+                            <span class="star active" onclick="setRating(5)">★</span>
+                        </div>
+                    </div>
+                    <div class="admin-form-grid">
+                        <div class="f-group">
+                            <label>আপনার নাম *</label>
+                            <input type="text" id="revName" placeholder="আপনার নাম লিখুন">
+                        </div>
+                    </div>
+                    <div class="f-group">
+                        <label>আপনার মতামত *</label>
+                        <textarea id="revComment" rows="2" placeholder="বাঁশ বা বেতের পণ্যটি কেমন লেগেছে লিখুন..."></textarea>
+                    </div>
+                    <button class="btn-buy-only" onclick="submitProductReview()">রিভিউ জমা দিন</button>
+                </div>
+                <div id="productReviewsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT PAGE -->
+    <div id="checkoutPage" class="page-section">
+        <div class="checkout-container">
+            <div class="checkout-form">
+                <h3>ডেলিভারি তথ্য (Shipping Details)</h3>
+                <div class="f-group">
+                    <label>আপনার নাম *</label>
+                    <input type="text" id="custName" placeholder="আপনার পূর্ণ নাম">
+                </div>
+                <div class="f-group">
+                    <label>মোবাইল নম্বর *</label>
+                    <input type="text" id="custPhone" placeholder="01xxxxxxxxx">
+                </div>
+                <div class="f-group">
+                    <label>সম্পূর্ণ ঠিকানা *</label>
+                    <textarea id="custAddress" rows="3" placeholder="গ্রাম/মহল্লা, থানা, জেলা"></textarea>
+                </div>
+                <div class="f-group">
+                    <label>বিশেষ কোনো নির্দেশনা বা মন্তব্য</label>
+                    <textarea id="custComment" rows="2" placeholder="যদি কোনো মন্তব্য থাকে লিখুন..."></textarea>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h3>অর্ডার সারাংশ (Order Summary)</h3>
+                <div class="summary-item">
+                    <span id="summaryTitleQty">Product x 1</span>
+                    <span id="summaryPrice">৳ 0</span>
+                </div>
+                <div class="f-group">
+                    <label>ডেলিভারি এলাকা</label>
+                    <select id="shippingArea" onchange="updateTotal()">
+                        <option value="70">বদলগাছী ও নওগাঁ জেলার ভেতরে (৳ ৭০)</option>
+                        <option value="130">নওগাঁ জেলার বাইরে সারাদেশ (৳ ১৩০)</option>
+                    </select>
+                </div>
+                <div class="summary-total">
+                    <span>সর্বমোট বিল</span>
+                    <span id="grandTotal">৳ 0</span>
+                </div>
+
+                <div class="payment-box">
+                    <b style="font-size: 14px; display:block; margin-bottom:10px;">পেমেন্ট পদ্ধতি নির্বাচন করুন:</b>
+                    <label><input type="radio" name="payMethod" value="Cash on delivery" checked onclick="toggleOnlineOptions(false)"> Cash on Delivery (পণ্য হাতে পেয়ে টাকা পরিশোধ)</label>
+                    <label><input type="radio" name="payMethod" value="Online Payment" onclick="toggleOnlineOptions(true)"> Online Payment (bKash / Nagad)</label>
+                    
+                    <div class="gateway-selector" id="gatewaySelector">
+                        <div class="gateway-btn" id="btnBkash" onclick="selectGateway('bKash')">🩷 bKash (বিকাশ)</div>
+                        <div class="gateway-btn" id="btnNagad" onclick="selectGateway('Nagad')">🧡 Nagad (নগদ)</div>
+                    </div>
+
+                    <div class="mobile-pay-details" id="mobilePayBox">
+                        <p id="gatewayInstruction"></p>
+                        <div class="f-group" style="margin-bottom:8px;">
+                            <label id="senderNumLabel">আপনার নম্বর:</label>
+                            <input type="text" id="senderNumber" placeholder="01xxxxxxxxx">
+                        </div>
+                        <div class="f-group" style="margin-bottom:0;">
+                            <label>Transaction ID (TrxID):</label>
+                            <input type="text" id="trxId" placeholder="e.g. 9G7H2K1L">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="place-order-btn" onclick="placeOrder()">অর্ডার কনফার্ম করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACCOUNT & ADMIN PANEL -->
+    <div id="accountPage" class="page-section">
+        <div class="auth-container">
+            <div id="loginFormSection">
+                <h2>অ্যাকাউন্ট লগইন (Account / Admin Login)</h2>
+                <div class="f-group">
+                    <label>Email / Phone / Admin ID</label>
+                    <input type="text" id="loginUser" placeholder="admin অথবা ফোন নম্বর">
+                </div>
+                <div class="f-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPass" placeholder="Password">
+                </div>
+                <button class="auth-btn" onclick="handleLogin()">Login</button>
+                <div class="switch-text" onclick="toggleAuthMode()">নতুন অ্যাকাউন্ট নেই? রেজিস্ট্রেশন করুন</div>
+            </div>
+
+            <div id="registerFormSection" style="display: none;">
+                <h2>নতুন অ্যাকাউন্ট তৈরি করুন</h2>
+                <div class="f-group">
+                    <label>আপনার নাম</label>
+                    <input type="text" id="regName" placeholder="Full Name">
+                </div>
+                <div class="f-group">
+                    <label>মোবাইল নম্বর বা ইমেইল</label>
+                    <input type="text" id="regUser" placeholder="Phone or Email">
+                </div>
+                <div class="f-group">
+                    <label>পাসওয়ার্ড</label>
+                    <input type="password" id="regPass" placeholder="Create Password">
+                </div>
+                <button class="auth-btn" onclick="handleRegister()">Register</button>
+                <div class="switch-text" onclick="toggleAuthMode()">আগে থেকেই অ্যাকাউন্ট আছে? লগইন করুন</div>
+            </div>
+
+            <div id="dashboardSection" style="display: none;">
+                <h2 id="welcomeMsg" style="margin-bottom: 15px;">স্বাগতম</h2>
+                
+                <!-- Admin Panel -->
+                <div id="adminPanel" style="display: none;">
+                    <!-- Notice & Slideshow Manager -->
+                    <div class="admin-add-box">
+                        <h3 style="color:var(--forest-dark); margin-bottom:12px;">📢 নোটিশ বার ও স্লাইডশো ম্যানেজার (On / Off)</h3>
+                        <div class="admin-form-grid">
+                            <div class="f-group">
+                                <label>Notice Bar Status</label>
+                                <select id="adminNoticeStatus">
+                                    <option value="on">On (চালু)</option>
+                                    <option value="off">Off (বন্ধ)</option>
+                                </select>
+                            </div>
+                            <div class="f-group" style="grid-column: span 2;">
+                                <label>Notice Bar Text (Marquee + Typewriter)</label>
+                                <input type="text" id="adminNoticeText">
+                            </div>
+                            <div class="f-group">
+                                <label>Hero Slideshow Status</label>
+                                <select id="adminSlideStatus">
+                                    <option value="on">On (স্লাইডশো চালু)</option>
+                                    <option value="off">Off (স্লাইডশো বন্ধ)</option>
+                                </select>
+                            </div>
+                            <div class="f-group">
+                                <label>Slide 1 Title & Image URL</label>
+                                <input type="text" id="adminSlideTitle1" style="margin-bottom:5px;">
+                                <input type="text" id="adminSlideImg1">
+                            </div>
+                            <div class="f-group">
+                                <label>Slide 2 Title & Image URL</label>
+                                <input type="text" id="adminSlideTitle2" style="margin-bottom:5px;">
+                                <input type="text" id="adminSlideImg2">
+                            </div>
+                        </div>
+                        <button class="auth-btn" style="background:var(--bamboo-brown);" onclick="saveSiteSettings()">💾 সেটিংস সেভ করুন</button>
+                    </div>
+
+                    <!-- Add / Edit Product -->
+                    <div class="admin-add-box" id="productFormBox">
+                        <h3 id="prodFormTitle" style="color:var(--forest-dark); margin-bottom:12px;">➕ নতুন বাঁশ/বেতের পণ্য যোগ করুন</h3>
+                        <input type="hidden" id="editProdId" value="">
+                        <div class="admin-form-grid">
+                            <div class="f-group">
+                                <label>পণ্যের নাম *</label>
+                                <input type="text" id="newProdName" placeholder="যেমন: নকশিকাঁথা বেতের ঝুড়ি">
+                            </div>
+                            <div class="f-group">
+                                <label>মূল ক্যাটাগরি *</label>
+                                <select id="newProdCategory">
+                                    <option value="বাঁশের পণ্য (Bamboo)">বাঁশের পণ্য (Bamboo)</option>
+                                    <option value="বেতের পণ্য (Cane)">বেতের পণ্য (Cane)</option>
+                                    <option value="হোম ডেকোর (Home Decor)">হোম ডেকোর (Home Decor)</option>
+                                    <option value="কিচেন ও ডাইনিং (Kitchen)">কিচেন ও ডাইনিং (Kitchen)</option>
+                                    <option value="Special Offers">Special Offers</option>
+                                </select>
+                            </div>
+                            <div class="f-group">
+                                <label>আগের দাম (৳)</label>
+                                <input type="number" id="newProdOldPrice" placeholder="650">
+                            </div>
+                            <div class="f-group">
+                                <label>বর্তমান বিক্রয়মূল্য (৳) *</label>
+                                <input type="number" id="newProdPrice" placeholder="490">
+                            </div>
+                            <div class="f-group">
+                                <label>অফার ব্যাজ (যেমন: 20% OFF বা HOT)</label>
+                                <input type="text" id="newProdBadge" placeholder="20% OFF">
+                            </div>
+                            <div class="f-group">
+                                <label>একাধিক ছবি আপলোড করুন</label>
+                                <input type="file" id="newProdFile" accept="image/*" multiple onchange="previewUploadedImg(event)">
+                            </div>
+                            <div class="f-group">
+                                <label>অথবা ছবির লিংক (কমা দিয়ে একাধিক)</label>
+                                <input type="text" id="newProdImg" placeholder="https://img1.jpg, https://img2.jpg">
+                            </div>
+                            <div class="f-group">
+                                <label>ফিনিশিং / রঙ (কমা দিয়ে লিখুন)</label>
+                                <input type="text" id="newProdColors" value="Natural Bamboo, Varnished Brown, Smoked Dark">
+                            </div>
+                            <div class="f-group">
+                                <label>সাইজ / মাপ (কমা দিয়ে লিখুন)</label>
+                                <input type="text" id="newProdSizes" value="Small, Medium, Large">
+                            </div>
+                        </div>
+
+                        <div class="f-group">
+                            <label style="display:flex; align-items:center; gap:8px; cursor:pointer; color:var(--amber-accent); font-size:14px;">
+                                <input type="checkbox" id="newProdSpecialOffer" style="width:18px; height:18px;">
+                                <span>🔥 এই পণ্যটি Special Offers ক্যাটাগরিতেও একসাথে দেখান</span>
+                            </label>
+                        </div>
+
+                        <div class="f-group">
+                            <label>পণ্যের বিস্তারিত বিবরণ</label>
+                            <textarea id="newProdDesc" rows="2" placeholder="খাঁটি পাকা বাঁশ ও বেত দিয়ে তৈরি, ঘুণ ধরবে না ও দীর্ঘস্থায়ী..."></textarea>
+                        </div>
+                        <div style="display:flex; gap:10px;">
+                            <button class="auth-btn" id="saveProdBtn" onclick="saveProductForm()">✅ পণ্য পাবলিশ করুন</button>
+                            <button class="auth-btn" id="cancelEditBtn" style="background:#6b6054; display:none; width:200px;" onclick="cancelEditProduct()">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Product Management Table -->
+                    <h3 style="color:var(--forest-dark); margin-bottom:5px;">📦 স্টোরের পণ্য তালিকা</h3>
+                    <div style="overflow-x:auto;">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ছবি</th>
+                                    <th>নাম ও ক্যাটাগরি</th>
+                                    <th>দাম ও অফার</th>
+                                    <th>ফিনিশিং ও সাইজ</th>
+                                    <th>ম্যানেজ করুন</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminProductListBody"></tbody>
+                        </table>
+                    </div>
+
+                    <!-- Customer Orders -->
+                    <h3 style="color:var(--bamboo-brown); margin-top:35px; margin-bottom:5px;">👑 কাস্টমার অর্ডার তালিকা</h3>
+                    <div style="overflow-x:auto;">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>কাস্টমার ও ফোন</th>
+                                    <th>ঠিকানা ও মন্তব্য</th>
+                                    <th>পণ্য, ফিনিশিং, সাইজ ও পরিমাণ</th>
+                                    <th>পেমেন্ট ও মোট বিল</th>
+                                    <th>স্ট্যাটাস</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orderTableBody"></tbody>
+                        </table>
+                    </div>
+
+                    <!-- Login History Table -->
+                    <h3 style="color:var(--forest-dark); margin-top:35px; margin-bottom:5px;">🕒 Login History (লগইন হিস্ট্রি)</h3>
+                    <div style="overflow-x:auto;">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>নাম</th>
+                                    <th>আইডি / ফোন</th>
+                                    <th>ধরন</th>
+                                    <th>লগইনের সময়</th>
+                                </tr>
+                            </thead>
+                            <tbody id="loginHistoryBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Regular User Orders -->
+                <div id="userPanel" style="display: none;">
+                    <h3 style="margin-bottom: 15px; color: var(--forest-dark);">👤 আমার অর্ডারসমূহ</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>পণ্য</th>
+                                <th>বিবরণ</th>
+                                <th>পেমেন্ট</th>
+                                <th>মোট বিল</th>
+                                <th>অবস্থা</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customerOrderHistoryBody"></tbody>
+                    </table>
+                </div>
+
+                <button class="auth-btn" style="background:#6b6054; margin-top:25px;" onclick="handleLogout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INFO PAGES -->
+    <div id="infoPage" class="page-section">
+        <div class="info-page-container" id="infoContent"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>এদন হস্তশিল্প এন্টারপ্রাইজ</h4>
+                <p><b>EDEN HANDICRAFTS ENTERPRISE</b> — প্রাকৃতিক ও পরিবেশবান্ধব বাঁশ - বেত শিল্প।</p>
+                <p style="color:#e9c46a; font-style:italic; margin-top:8px;">“প্রকৃতির ছোঁয়ায় আপনার ঘর থাকুক সুন্দর ও নান্দনিক”</p>
+                <!-- Facebook Page Link Slot (Replace '#' with your Facebook link) -->
+                <div class="social-links-row">
+                    <a href="#" target="_blank" class="fb-circle-link" title="Facebook Page">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>কারিগর ও ঠিকানা</h4>
+                <p><b>মূল কারিগর:</b> পলাশ সরেন</p>
+                <p><b>লোকেশন:</b> জিয়ল (সইতোল), বদলগাছী, নওগাঁ</p>
+                <p><b>মোবাইল:</b> 01406205705</p>
+            </div>
+            <div class="footer-col">
+                <h4>তথ্য ও নীতিমালা</h4>
+                <ul>
+                    <li><a onclick="loadInfo('about')">আমাদের সম্পর্কে (About Us)</a></li>
+                    <li><a onclick="loadInfo('delivery')">ডেলিভারি নীতিমালা</a></li>
+                    <li><a onclick="loadInfo('return')">রিটার্ন ও রিপ্লেসমেন্ট</a></li>
+                    <li><a onclick="loadInfo('how')">কীভাবে অর্ডার করবেন</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>ক্যাটাগরিসমূহ</h4>
+                <ul>
+                    <li><a onclick="filterCategory('Special Offers')">Special Offers</a></li>
+                    <li><a onclick="filterCategory('বাঁশের পণ্য (Bamboo)')">বাঁশের পণ্য (Bamboo)</a></li>
+                    <li><a onclick="filterCategory('বেতের পণ্য (Cane)')">বেতের পণ্য (Cane)</a></li>
+                    <li><a onclick="filterCategory('হোম ডেকোর (Home Decor)')">হোম ডেকোর (Home Decor)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            Copyright © 2026 EDEN HANDICRAFTS ENTERPRISE (এদন হস্তশিল্প এন্টারপ্রাইজ). Developed by Michael Daniel Roy.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8801406205705?text=আসসালামু%20আলাইকুম%20এদন%20হস্তশিল্প%20এন্টারপ্রাইজ,%20আমি%20বাঁশ-বেতের%20পণ্য%20অর্ডার%20করতে%20চাই।" target="_blank" class="whatsapp-float" title="WhatsApp-এ যোগাযোগ করুন">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const ADMIN_WHATSAPP = '8801406205705';
+        let currentProduct = null;
+        let selectedGateway = '';
+        let uploadedBase64Imgs = [];
+        let currentSelectedRating = 5;
+        let expandedCategories = [];
+        let slideInterval = null;
+        let typewriterInterval = null;
+        let currentViewState = { page: 'home', cat: 'ALL', query: '', infoType: '' };
+        let isHandlingPopState = false;
+
+        const homeCategoriesOrder = [
+            'Special Offers',
+            'বাঁশের পণ্য (Bamboo)',
+            'বেতের পণ্য (Cane)',
+            'হোম ডেকোর (Home Decor)',
+            'কিচেন ও ডাইনিং (Kitchen)'
+        ];
+
+        const defaultSettings = {
+            noticeStatus: 'on',
+            noticeText: '🌿 এদন হস্তশিল্প এন্টারপ্রাইজ — প্রকৃতির ছোঁয়ায় আপনার ঘর থাকুক সুন্দর ও নান্দনিক | মূল কারিগর: পলাশ সরেন | জিয়ল (সইতোল), বদলগাছী, নওগাঁ | মোবা: 01406205705',
+            slideStatus: 'on',
+            slideTitle1: 'প্রকৃতির ছোঁয়ায় আপনার ঘর থাকুক সুন্দর ও নান্দনিক',
+            slideImg1: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1400',
+            slideTitle2: 'হাতে তৈরি পরিবেশবান্ধব বাঁশ ও বেতের সম্ভার',
+            slideImg2: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1400'
+        };
+
+        function formatPhoneForWA(rawPhone) {
+            let digits = (rawPhone || '').replace(/\D/g, '');
+            if(!digits) return '';
+            if(digits.startsWith('880')) return digits;
+            if(digits.startsWith('0')) return '88' + digits;
+            return '880' + digits;
+        }
+
+        function sendWhatsAppMessage(phone, message) {
+            let cleanPhone = formatPhoneForWA(phone);
+            if(!cleanPhone) return;
+            let url = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Phone Back Button Safe Navigation
+        window.addEventListener('popstate', function(event) {
+            isHandlingPopState = true;
+            if(event.state && event.state.viewState) {
+                restoreState(event.state.viewState);
+            } else {
+                restoreState({ page: 'home', cat: 'ALL', query: '', infoType: '' });
+            }
+            isHandlingPopState = false;
+        });
+
+        function pushViewHistory(stateObj) {
+            if(isHandlingPopState) return;
+            try {
+                history.pushState({ viewState: stateObj }, '', '#eden-' + stateObj.page);
+            } catch(e) {}
+        }
+
+        function restoreState(st) {
+            currentViewState = st;
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById((st.page || 'home') + 'Page').classList.add('active');
+
+            if(st.page === 'home') {
+                let s = getSettings();
+                if(st.cat === 'ALL' && !st.query) {
+                    document.getElementById('searchInput').value = '';
+                    if(s.slideStatus === 'on') document.getElementById('heroSlider').style.display = 'block';
+                    renderProducts('ALL');
+                } else {
+                    document.getElementById('heroSlider').style.display = 'none';
+                    renderProducts(st.cat || 'ALL', st.query || '');
+                }
+            } else if(st.page === 'product' && st.productId) {
+                renderProductDetailsOnly(st.productId);
+            } else if(st.page === 'info' && st.infoType) {
+                renderInfoOnly(st.infoType);
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function getSettings() {
+            try {
+                let s = localStorage.getItem('eden_settings');
+                return s ? { ...defaultSettings, ...JSON.parse(s) } : defaultSettings;
+            } catch(e) {
+                return defaultSettings;
+            }
+        }
+
+        function startTypewriterText(fullText) {
+            let target = document.getElementById('typewriterNoticeText');
+            if(typewriterInterval) clearInterval(typewriterInterval);
+            target.innerText = '';
+            let i = 0;
+            typewriterInterval = setInterval(() => {
+                if(i < fullText.length) {
+                    target.innerText += fullText.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typewriterInterval);
+                    setTimeout(() => startTypewriterText(fullText), 2500);
+                }
+            }, 65);
+        }
+
+        function applySiteSettings() {
+            let s = getSettings();
+            let noticeBar = document.getElementById('dynamicNoticeBar');
+            if(s.noticeStatus === 'on') {
+                noticeBar.style.display = 'block';
+                startTypewriterText(s.noticeText || defaultSettings.noticeText);
+            } else {
+                noticeBar.style.display = 'none';
+                if(typewriterInterval) clearInterval(typewriterInterval);
+            }
+
+            let slider = document.getElementById('heroSlider');
+            if(slideInterval) clearInterval(slideInterval);
+
+            if(s.slideStatus === 'on') {
+                slider.style.display = 'block';
+                let slides = [
+                    {
+                        title: s.slideTitle1 || defaultSettings.slideTitle1,
+                        img: s.slideImg1 || defaultSettings.slideImg1
+                    },
+                    {
+                        title: s.slideTitle2 || defaultSettings.slideTitle2,
+                        img: s.slideImg2 || defaultSettings.slideImg2
+                    }
+                ];
+                let idx = 0;
+                const setSlide = (i) => {
+                    document.getElementById('slideTitle').innerText = slides[i].title;
+                    document.getElementById('heroCardBg').style.backgroundImage =
+                        `linear-gradient(120deg, rgba(27, 67, 50, 0.92), rgba(140, 90, 43, 0.85)), url('${slides[i].img}')`;
+                };
+                setSlide(0);
+                slideInterval = setInterval(() => {
+                    idx = (idx + 1) % slides.length;
+                    setSlide(idx);
+                }, 4000);
+            } else {
+                slider.style.display = 'none';
+            }
+        }
+
+        function saveSiteSettings() {
+            let newSettings = {
+                noticeStatus: document.getElementById('adminNoticeStatus').value,
+                noticeText: document.getElementById('adminNoticeText').value,
+                slideStatus: document.getElementById('adminSlideStatus').value,
+                slideTitle1: document.getElementById('adminSlideTitle1').value,
+                slideImg1: document.getElementById('adminSlideImg1').value,
+                slideTitle2: document.getElementById('adminSlideTitle2').value,
+                slideImg2: document.getElementById('adminSlideImg2').value
+            };
+            localStorage.setItem('eden_settings', JSON.stringify(newSettings));
+            applySiteSettings();
+            alert('✅ নোটিশ বার এবং স্লাইডশো সেটিংস সেভ হয়েছে!');
+        }
+
+        const defaultProducts = [
+            {
+                id: 101,
+                name: 'হাতে বোনা প্রাকৃতিক বেতের ফুলদানি ও ঝুড়ি',
+                category: 'বেতের পণ্য (Cane)',
+                inSpecialOffer: true,
+                oldPrice: 650,
+                price: 480,
+                badge: '25% OFF',
+                img: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800',
+                images: [
+                    'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800',
+                    'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800'
+                ],
+                colors: ['Natural Cane', 'Varnished Honey'],
+                sizes: ['Medium (12 inch)', 'Large (16 inch)'],
+                desc: 'মূল কারিগর পলাশ সরেনের তত্ত্বাবধানে খাঁটি বেত দিয়ে নিপুণভাবে বোনা পরিবেশবান্ধব ঝুড়ি ও ডেকোরেশন পিস।',
+                inStock: true
+            },
+            {
+                id: 102,
+                name: 'নান্দনিক বাঁশের হ্যাঙ্গিং ল্যাম্পশেড',
+                category: 'হোম ডেকোর (Home Decor)',
+                inSpecialOffer: true,
+                oldPrice: 1200,
+                price: 890,
+                badge: 'HOT',
+                img: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800',
+                images: ['https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800'],
+                colors: ['Natural Bamboo', 'Smoked Brown'],
+                sizes: ['Standard', 'Large'],
+                desc: 'ড্রয়িং রুম বা ডাইনিং স্পেসকে প্রকৃতির ছোঁয়ায় সাজাতে পাকা বাঁশের শলাকা দিয়ে তৈরি আধুনিক ল্যাম্পশেড।',
+                inStock: true
+            },
+            {
+                id: 103,
+                name: 'বাঁশের তৈরি পরিবেশবান্ধব টিফিন ও ফল ঝুড়ি',
+                category: 'বাঁশের পণ্য (Bamboo)',
+                inSpecialOffer: false,
+                oldPrice: 550,
+                price: 420,
+                badge: 'ECO',
+                img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800',
+                images: ['https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800'],
+                colors: ['Natural Bamboo'],
+                sizes: ['Small', 'Medium', 'Large'],
+                desc: 'প্লাস্টিকের বিকল্প হিসেবে দৈনন্দিন ব্যবহারের জন্য মজবুত ও ঘুণ-প্রতিরোধী বাঁশের ঝুড়ি।',
+                inStock: true
+            },
+            {
+                id: 104,
+                name: 'বাঁশের তৈরি চায়ের কাপ ও সার্ভিং ট্রে সেট',
+                category: 'কিচেন ও ডাইনিং (Kitchen)',
+                inSpecialOffer: false,
+                oldPrice: 950,
+                price: 750,
+                badge: '20% OFF',
+                img: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800',
+                images: ['https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800'],
+                colors: ['Polished Bamboo'],
+                sizes: ['4 Cup Set', '6 Cup Set'],
+                desc: 'সম্পূর্ণ কেমিক্যালমুক্ত ও ফুড-গ্রেড পলিশ করা বাঁশের চায়ের কাপ ও ট্রে সেট।',
+                inStock: true
+            }
+        ];
+
+        function getProducts() {
+            try {
+                let stored = localStorage.getItem('eden_products');
+                if(!stored) {
+                    localStorage.setItem('eden_products', JSON.stringify(defaultProducts));
+                    return defaultProducts;
+                }
+                return JSON.parse(stored);
+            } catch(e) {
+                return defaultProducts;
+            }
+        }
+
+        function saveProducts(list) {
+            try {
+                localStorage.setItem('eden_products', JSON.stringify(list));
+            } catch(e) {
+                alert('ছবির সাইজ বড় হয়ে গেছে! দয়া করে ছোট সাইজের ছবি বা লিংক দিন।');
+            }
+        }
+
+        function productBelongsToCategory(p, cat) {
+            if(cat === 'Special Offers') {
+                return p.category === 'Special Offers' || Boolean(p.inSpecialOffer);
+            }
+            return p.category === cat;
+        }
+
+        function previewUploadedImg(event) {
+            const files = Array.from(event.target.files || []);
+            if(files.length === 0) return;
+
+            uploadedBase64Imgs = [];
+            let processed = 0;
+
+            files.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const maxW = 500;
+                        const scale = maxW / img.width;
+                        canvas.width = maxW;
+                        canvas.height = img.height * scale;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        uploadedBase64Imgs.push(canvas.toDataURL('image/jpeg', 0.72));
+                        processed++;
+                        if(processed === files.length) {
+                            document.getElementById('newProdImg').value = uploadedBase64Imgs.join(', ');
+                        }
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function buildProductCardHtml(p) {
+            let badgeHtml = '';
+            if(p.badge && p.badge.trim() !== '') {
+                let isHot = p.badge.toUpperCase().includes('HOT') ? 'hot' : '';
+                badgeHtml = `<span class="badge ${isHot}">${p.badge}</span>`;
+            }
+
+            let oldPriceHtml = (p.oldPrice && p.oldPrice > p.price) ? `<span class="old-price">৳ ${p.oldPrice}</span>` : '';
+            let actionBtn = p.inStock 
+                ? `<button class="btn-buy-only" onclick="openProduct(${p.id})">Buy Now</button>`
+                : `<button class="btn-stock-out" disabled>Stock Out</button>`;
+
+            return `
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        ${badgeHtml}
+                        <img src="${p.img}" alt="${p.name}" onclick="openProduct(${p.id})">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="card-cat-tag">${p.category}</div>
+                            <h3 onclick="openProduct(${p.id})">${p.name}</h3>
+                        </div>
+                        <div class="price-row">
+                            <div>
+                                ${oldPriceHtml}
+                                <span class="new-price">৳ ${p.price}</span>
+                            </div>
+                            ${actionBtn}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function expandCategoryInPlace(cat) {
+            if(!expandedCategories.includes(cat)) {
+                expandedCategories.push(cat);
+            }
+            renderProducts('ALL');
+        }
+
+        function renderProducts(filterCat = 'ALL', searchQuery = '') {
+            let products = getProducts();
+            let container = document.getElementById('productGridContainer');
+            container.innerHTML = '';
+
+            if(filterCat !== 'ALL') {
+                let catProds = products.filter(p => productBelongsToCategory(p, filterCat));
+                if(catProds.length === 0) {
+                    container.innerHTML = `<div class="products-grid"><div class="empty-notice-box"><h3>বর্তমানে "${filterCat}" ক্যাটাগরিতে কোনো পণ্য যুক্ত করা হয়নি।</h3></div></div>`;
+                    return;
+                }
+                let cardsHtml = catProds.map(p => buildProductCardHtml(p)).join('');
+                container.innerHTML = `
+                    <div class="category-block">
+                        <div class="category-header-bar">
+                            <h2 class="section-title">${filterCat}</h2>
+                            <span class="cat-subtitle">মোট ${catProds.length}টি পণ্য</span>
+                        </div>
+                        <div class="products-grid">${cardsHtml}</div>
+                    </div>
+                `;
+                return;
+            }
+
+            if(searchQuery !== '') {
+                let matched = products.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+                if(matched.length === 0) {
+                    container.innerHTML = `<div class="products-grid"><div class="empty-notice-box"><h3>"${searchQuery}" নামে কোনো পণ্য পাওয়া যায়নি।</h3></div></div>`;
+                    return;
+                }
+                let cardsHtml = matched.map(p => buildProductCardHtml(p)).join('');
+                container.innerHTML = `
+                    <div class="category-block">
+                        <div class="category-header-bar">
+                            <h2 class="section-title">Search: "${searchQuery}"</h2>
+                        </div>
+                        <div class="products-grid">${cardsHtml}</div>
+                    </div>
+                `;
+                return;
+            }
+
+            homeCategoriesOrder.forEach(cat => {
+                let catProducts = products.filter(p => productBelongsToCategory(p, cat));
+                if(catProducts.length === 0) return;
+
+                let isExpanded = expandedCategories.includes(cat);
+                let hasMore = catProducts.length > 4 && !isExpanded;
+                let displayList = hasMore ? catProducts.slice(0, 4) : catProducts;
+                let cardsHtml = displayList.map(p => buildProductCardHtml(p)).join('');
+                let viewAllHtml = hasMore
+                    ? `<div class="view-all-wrap"><button class="btn-view-all" onclick="expandCategoryInPlace('${cat}')">View All (${catProducts.length}) <i class="fa-solid fa-chevron-down"></i></button></div>`
+                    : '';
+
+                container.innerHTML += `
+                    <div class="category-block">
+                        <div class="category-header-bar">
+                            <h2 class="section-title">${cat}</h2>
+                            <span class="cat-subtitle">প্রাকৃতিক হস্তশিল্প</span>
+                        </div>
+                        <div class="products-grid">${cardsHtml}</div>
+                        ${viewAllHtml}
+                    </div>
+                `;
+            });
+        }
+
+        function navigateToPage(pageId, isHomeReset = false) {
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(pageId + 'Page').classList.add('active');
+
+            if(pageId === 'home' && isHomeReset) {
+                expandedCategories = [];
+                document.getElementById('searchInput').value = '';
+                let s = getSettings();
+                if(s.slideStatus === 'on') document.getElementById('heroSlider').style.display = 'block';
+                renderProducts('ALL');
+                currentViewState = { page: 'home', cat: 'ALL', query: '', infoType: '' };
+                pushViewHistory(currentViewState);
+            } else {
+                currentViewState = { page: pageId, cat: 'ALL', query: '', infoType: '' };
+                pushViewHistory(currentViewState);
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function filterCategory(cat) {
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById('homePage').classList.add('active');
+            document.getElementById('heroSlider').style.display = 'none';
+            renderProducts(cat);
+            currentViewState = { page: 'home', cat: cat, query: '', infoType: '' };
+            pushViewHistory(currentViewState);
+        }
+
+        function liveSearch() {
+            let query = document.getElementById('searchInput').value.trim();
+            if(query === '') {
+                let s = getSettings();
+                if(s.slideStatus === 'on') document.getElementById('heroSlider').style.display = 'block';
+                renderProducts('ALL');
+            }
+        }
+
+        function triggerSearch() {
+            let query = document.getElementById('searchInput').value.trim();
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById('homePage').classList.add('active');
+            document.getElementById('heroSlider').style.display = 'none';
+            renderProducts('ALL', query);
+            currentViewState = { page: 'home', cat: 'ALL', query: query, infoType: '' };
+            pushViewHistory(currentViewState);
+        }
+
+        function renderProductDetailsOnly(id) {
+            let products = getProducts();
+            let p = products.find(item => item.id == id);
+            if(!p) return;
+
+            currentProduct = p;
+            document.getElementById('productTitle').innerText = p.name;
+            document.getElementById('productPrice').innerText = '৳ ' + p.price;
+            document.getElementById('productOldPrice').innerText = (p.oldPrice && p.oldPrice > p.price) ? '৳ ' + p.oldPrice : '';
+            document.getElementById('mainProductImg').src = p.img;
+            document.getElementById('productDescriptionBox').innerText = p.desc || 'প্রাকৃতিক বাঁশ ও বেত দিয়ে তৈরি পরিবেশবান্ধব হস্তশিল্প।';
+            document.getElementById('productQty').value = 1;
+
+            let imgList = (p.images && p.images.length > 0) ? p.images : [p.img];
+            let thumbStrip = document.getElementById('productThumbnails');
+            thumbStrip.innerHTML = '';
+            if(imgList.length > 1) {
+                imgList.forEach((srcUrl, idx) => {
+                    let activeCls = idx === 0 ? 'active-thumb' : '';
+                    thumbStrip.innerHTML += `<img src="${srcUrl}" class="thumb-item ${activeCls}" onclick="switchMainImg(this, '${srcUrl}')">`;
+                });
+            }
+
+            let colorSel = document.getElementById('selectedColor');
+            colorSel.innerHTML = '';
+            (p.colors || ['Natural Bamboo']).forEach(c => {
+                colorSel.innerHTML += `<option value="${c.trim()}">${c.trim()}</option>`;
+            });
+
+            let sizeSel = document.getElementById('selectedSize');
+            sizeSel.innerHTML = '';
+            (p.sizes || ['Standard']).forEach(s => {
+                sizeSel.innerHTML += `<option value="${s.trim()}">${s.trim()}</option>`;
+            });
+
+            let badgeArea = document.getElementById('stockBadgeArea');
+            let buySec = document.getElementById('detailBuySection');
+            if(p.inStock) {
+                badgeArea.innerHTML = `<div class="in-stock-badge">✓ স্টকে আছে (In Stock)</div>`;
+                buySec.style.display = 'flex';
+            } else {
+                badgeArea.innerHTML = `<div class="out-stock-badge">✕ স্টক শেষ (Stock Out)</div>`;
+                buySec.style.display = 'none';
+            }
+
+            setRating(5);
+            renderProductReviews(p.id);
+        }
+
+        function openProduct(id) {
+            renderProductDetailsOnly(id);
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById('productPage').classList.add('active');
+            currentViewState = { page: 'product', productId: id, cat: 'ALL', query: '', infoType: '' };
+            pushViewHistory(currentViewState);
+            window.scrollTo(0, 0);
+        }
+
+        function switchMainImg(el, srcUrl) {
+            document.getElementById('mainProductImg').src = srcUrl;
+            document.querySelectorAll('.thumb-item').forEach(item => item.classList.remove('active-thumb'));
+            el.classList.add('active-thumb');
+        }
+
+        function setRating(score) {
+            currentSelectedRating = score;
+            let stars = document.querySelectorAll('#starPicker .star');
+            stars.forEach((st, idx) => {
+                st.classList.toggle('active', idx < score);
+            });
+        }
+
+        function getAllReviews() {
+            try { return JSON.parse(localStorage.getItem('eden_reviews')) || {}; }
+            catch(e) { return {}; }
+        }
+
+        function submitProductReview() {
+            if(!currentProduct) return;
+            let name = document.getElementById('revName').value.trim();
+            let comment = document.getElementById('revComment').value.trim();
+            if(!name || !comment) {
+                alert('দয়া করে আপনার নাম এবং মতামত লিখুন!');
+                return;
+            }
+            let allRev = getAllReviews();
+            if(!allRev[currentProduct.id]) allRev[currentProduct.id] = [];
+            allRev[currentProduct.id].unshift({
+                name: name,
+                rating: currentSelectedRating,
+                comment: comment,
+                date: new Date().toLocaleDateString()
+            });
+            localStorage.setItem('eden_reviews', JSON.stringify(allRev));
+            document.getElementById('revName').value = '';
+            document.getElementById('revComment').value = '';
+            setRating(5);
+            renderProductReviews(currentProduct.id);
+            alert('✅ আপনার রিভিউ যুক্ত হয়েছে!');
+        }
+
+        function renderProductReviews(prodId) {
+            let listEl = document.getElementById('productReviewsList');
+            let prodReviews = getAllReviews()[prodId] || [];
+            if(prodReviews.length === 0) {
+                listEl.innerHTML = `<p style="color:#6b6054; font-size:14px;">এই পণ্যটিতে এখনো কোনো রিভিউ নেই।</p>`;
+                return;
+            }
+            listEl.innerHTML = prodReviews.map(r => {
+                let stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+                return `
+                    <div class="review-item">
+                        <div class="review-stars">${stars}</div>
+                        <b>${r.name}</b> <small style="color:#6b6054;">(${r.date})</small>
+                        <p style="margin-top:6px; font-size:14px;">${r.comment}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function changeQty(val) {
+            let qtyInput = document.getElementById('productQty');
+            let currentQty = parseInt(qtyInput.value) + val;
+            if(currentQty < 1) currentQty = 1;
+            qtyInput.value = currentQty;
+        }
+
+        function zoomIn(e) {
+            const container = e.currentTarget;
+            const img = container.querySelector('img');
+            const x = e.clientX - container.getBoundingClientRect().left;
+            const y = e.clientY - container.getBoundingClientRect().top;
+            img.style.transformOrigin = `${(x / container.offsetWidth) * 100}% ${(y / container.offsetHeight) * 100}%`;
+            img.style.transform = "scale(2)";
+        }
+
+        function zoomOut(e) {
+            const img = e.currentTarget.querySelector('img');
+            img.style.transformOrigin = "center center";
+            img.style.transform = "scale(1)";
+        }
+
+        function goToCheckout() {
+            let qty = parseInt(document.getElementById('productQty').value);
+            let color = document.getElementById('selectedColor').value;
+            let size = document.getElementById('selectedSize').value;
+            document.getElementById('summaryTitleQty').innerText = `${currentProduct.name} (${color}, ${size}) x ${qty}`;
+            document.getElementById('summaryPrice').innerText = '৳ ' + (currentProduct.price * qty);
+            updateTotal();
+            navigateToPage('checkout');
+        }
+
+        function updateTotal() {
+            let qty = parseInt(document.getElementById('productQty').value);
+            let subtotal = currentProduct.price * qty;
+            let shipping = parseInt(document.getElementById('shippingArea').value);
+            document.getElementById('grandTotal').innerText = '৳ ' + (subtotal + shipping);
+        }
+
+        function toggleOnlineOptions(show) {
+            let selector = document.getElementById('gatewaySelector');
+            let detailsBox = document.getElementById('mobilePayBox');
+            if(show) {
+                selector.style.display = 'flex';
+            } else {
+                selector.style.display = 'none';
+                detailsBox.style.display = 'none';
+                selectedGateway = '';
+            }
+        }
+
+        function selectGateway(type) {
+            selectedGateway = type;
+            let btnBkash = document.getElementById('btnBkash');
+            let btnNagad = document.getElementById('btnNagad');
+            let box = document.getElementById('mobilePayBox');
+            let instruction = document.getElementById('gatewayInstruction');
+            let numLabel = document.getElementById('senderNumLabel');
+
+            btnBkash.classList.remove('bkash-active');
+            btnNagad.classList.remove('nagad-active');
+            box.classList.remove('bkash-theme', 'nagad-theme');
+            box.style.display = 'block';
+
+            if(type === 'bKash') {
+                btnBkash.classList.add('bkash-active');
+                box.classList.add('bkash-theme');
+                instruction.innerHTML = `নিচের পার্সোনাল <b>bKash (বিকাশ)</b> নম্বরে Send Money করুন:<br><span class="copy-num-badge" style="background:#e2136e;">01406205705</span>`;
+                numLabel.innerText = 'আপনার যে bKash নম্বর থেকে টাকা পাঠিয়েছেন:';
+            } else {
+                btnNagad.classList.add('nagad-active');
+                box.classList.add('nagad-theme');
+                instruction.innerHTML = `নিচের পার্সোনাল <b>Nagad (নগদ)</b> নম্বরে Send Money করুন:<br><span class="copy-num-badge" style="background:#f6921e;">01406205705</span>`;
+                numLabel.innerText = 'আপনার যে Nagad নম্বর থেকে টাকা পাঠিয়েছেন:';
+            }
+        }
+
+        function placeOrder() {
+            let name = document.getElementById('custName').value.trim();
+            let phone = document.getElementById('custPhone').value.trim();
+            let address = document.getElementById('custAddress').value.trim();
+            let comment = document.getElementById('custComment').value.trim();
+            let qty = document.getElementById('productQty').value;
+            let color = document.getElementById('selectedColor').value;
+            let size = document.getElementById('selectedSize').value;
+            let totalAmount = document.getElementById('grandTotal').innerText;
+            
+            let payMethod = document.querySelector('input[name="payMethod"]:checked').value;
+            let paymentDetails = 'Cash on delivery';
+
+            if(payMethod === 'Online Payment') {
+                if(!selectedGateway) {
+                    alert('অনলাইন পেমেন্টের জন্য bKash অথবা Nagad সিলেক্ট করুন!');
+                    return;
+                }
+                let sNum = document.getElementById('senderNumber').value.trim();
+                let trx = document.getElementById('trxId').value.trim();
+                if(!sNum || !trx) {
+                    alert(`আপনার ${selectedGateway} নম্বর এবং Transaction ID (TrxID) লিখুন!`);
+                    return;
+                }
+                paymentDetails = `${selectedGateway} Paid (From: ${sNum}, TrxID: ${trx})`;
+            }
+
+            if(!name || !phone || !address) {
+                alert('দয়া করে আপনার নাম, মোবাইল নম্বর এবং ঠিকানা লিখুন!');
+                return;
+            }
+
+            let orders = JSON.parse(localStorage.getItem('eden_orders')) || [];
+            orders.push({
+                name, phone, address,
+                comment: comment || 'নেই',
+                product: currentProduct.name,
+                details: `Finish: ${color}, Size: ${size}, Qty: ${qty}`,
+                payment: paymentDetails,
+                total: totalAmount,
+                status: 'Pending',
+                date: new Date().toLocaleString()
+            });
+            localStorage.setItem('eden_orders', JSON.stringify(orders));
+
+            let adminMsg = `🌿 নতুন অর্ডার — এদন হস্তশিল্প এন্টারপ্রাইজ\n*কাস্টমার:* ${name}\n*মোবাইল:* ${phone}\n*ঠিকানা:* ${address}\n*মন্তব্য:* ${comment || 'নেই'}\n*পণ্য:* ${currentProduct.name}\n*বিবরণ:* ${color}, ${size} (${qty}টি)\n*পেমেন্ট:* ${paymentDetails}\n*মোট বিল:* ${totalAmount}`;
+            let customerMsg = `আসসালামু আলাইকুম ${name},\nএদন হস্তশিল্প এন্টারপ্রাইজ থেকে আপনার অর্ডারটি গ্রহণ করা হয়েছে।\n*পণ্য:* ${currentProduct.name} (${qty}টি)\n*মোট বিল:* ${totalAmount}\n*ঠিকানা:* ${address}\nযোগাযোগ: 01406205705`;
+
+            alert(`🎉 ধন্যবাদ ${name}! আপনার অর্ডারটি সফলভাবে গৃহীত হয়েছে। এখন মেইন অ্যাডমিন ও কাস্টমার WhatsApp-এ তথ্য পাঠানো হচ্ছে।`);
+
+            // Send to Main Admin WhatsApp & Customer WhatsApp
+            sendWhatsAppMessage(ADMIN_WHATSAPP, adminMsg);
+            setTimeout(() => {
+                sendWhatsAppMessage(phone, customerMsg);
+            }, 900);
+
+            navigateToPage('home', true);
+        }
+
+        function saveProductForm() {
+            let editId = document.getElementById('editProdId').value;
+            let name = document.getElementById('newProdName').value.trim();
+            let category = document.getElementById('newProdCategory').value;
+            let inSpecialOffer = document.getElementById('newProdSpecialOffer').checked || (category === 'Special Offers');
+            let oldPrice = Number(document.getElementById('newProdOldPrice').value) || 0;
+            let price = Number(document.getElementById('newProdPrice').value);
+            let badge = document.getElementById('newProdBadge').value.trim();
+            let imgInput = document.getElementById('newProdImg').value.trim();
+            let colorsStr = document.getElementById('newProdColors').value.trim();
+            let sizesStr = document.getElementById('newProdSizes').value.trim();
+            let desc = document.getElementById('newProdDesc').value.trim();
+
+            if(!name || !price || price <= 0) {
+                alert('দয়া করে পণ্যের নাম এবং সঠিক দাম লিখুন!');
+                return;
+            }
+
+            let parsedUrls = imgInput ? imgInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+            let imageList = uploadedBase64Imgs.length > 0 ? uploadedBase64Imgs : parsedUrls;
+            if(imageList.length === 0) {
+                imageList = ['https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800'];
+            }
+
+            let products = getProducts();
+            if(editId) {
+                let idx = products.findIndex(p => p.id == editId);
+                if(idx !== -1) {
+                    products[idx] = {
+                        ...products[idx],
+                        name, category, inSpecialOffer, oldPrice, price, badge,
+                        img: imageList[0],
+                        images: imageList,
+                        colors: colorsStr ? colorsStr.split(',').map(s => s.trim()) : ['Natural Bamboo'],
+                        sizes: sizesStr ? sizesStr.split(',').map(s => s.trim()) : ['Standard'],
+                        desc: desc || 'প্রাকৃতিক ও পরিবেশবান্ধব বাঁশ-বেত শিল্প।'
+                    };
+                }
+                alert('✅ পণ্যটি আপডেট হয়েছে!');
+            } else {
+                products.unshift({
+                    id: Date.now(),
+                    name, category, inSpecialOffer, oldPrice, price, badge,
+                    img: imageList[0],
+                    images: imageList,
+                    colors: colorsStr ? colorsStr.split(',').map(s => s.trim()) : ['Natural Bamboo'],
+                    sizes: sizesStr ? sizesStr.split(',').map(s => s.trim()) : ['Standard'],
+                    desc: desc || 'প্রাকৃতিক ও পরিবেশবান্ধব বাঁশ-বেত শিল্প।',
+                    inStock: true
+                });
+                alert('✅ নতুন পণ্য পাবলিশ হয়েছে!');
+            }
+
+            saveProducts(products);
+            cancelEditProduct();
+            renderProducts('ALL');
+            loadDashboard(JSON.parse(localStorage.getItem('eden_current_user')));
+        }
+
+        function editProduct(id) {
+            let p = getProducts().find(item => item.id === id);
+            if(!p) return;
+            let imgs = (p.images && p.images.length > 0) ? p.images : [p.img];
+            document.getElementById('editProdId').value = p.id;
+            document.getElementById('prodFormTitle').innerText = `✏️ পণ্য এডিট করুন: ${p.name}`;
+            document.getElementById('newProdName').value = p.name;
+            document.getElementById('newProdCategory').value = p.category;
+            document.getElementById('newProdSpecialOffer').checked = Boolean(p.inSpecialOffer) || p.category === 'Special Offers';
+            document.getElementById('newProdOldPrice').value = p.oldPrice || '';
+            document.getElementById('newProdPrice').value = p.price;
+            document.getElementById('newProdBadge').value = p.badge || '';
+            document.getElementById('newProdImg').value = imgs.join(', ');
+            document.getElementById('newProdColors').value = (p.colors || []).join(', ');
+            document.getElementById('newProdSizes').value = (p.sizes || []).join(', ');
+            document.getElementById('newProdDesc').value = p.desc || '';
+            document.getElementById('saveProdBtn').innerText = '💾 আপডেট সেভ করুন';
+            document.getElementById('cancelEditBtn').style.display = 'block';
+            document.getElementById('productFormBox').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function cancelEditProduct() {
+            document.getElementById('editProdId').value = '';
+            document.getElementById('prodFormTitle').innerText = '➕ নতুন বাঁশ/বেতের পণ্য যোগ করুন';
+            document.getElementById('newProdName').value = '';
+            document.getElementById('newProdSpecialOffer').checked = false;
+            document.getElementById('newProdOldPrice').value = '';
+            document.getElementById('newProdPrice').value = '';
+            document.getElementById('newProdBadge').value = '';
+            document.getElementById('newProdImg').value = '';
+            document.getElementById('newProdFile').value = '';
+            document.getElementById('newProdDesc').value = '';
+            uploadedBase64Imgs = [];
+            document.getElementById('saveProdBtn').innerText = '✅ পণ্য পাবলিশ করুন';
+            document.getElementById('cancelEditBtn').style.display = 'none';
+        }
+
+        function toggleSpecialOfferFlag(id) {
+            let products = getProducts();
+            let idx = products.findIndex(p => p.id === id);
+            if(idx !== -1) {
+                products[idx].inSpecialOffer = !products[idx].inSpecialOffer;
+                saveProducts(products);
+                renderProducts('ALL');
+                loadDashboard(JSON.parse(localStorage.getItem('eden_current_user')));
+            }
+        }
+
+        function toggleProductStock(id) {
+            let products = getProducts();
+            let idx = products.findIndex(p => p.id === id);
+            if(idx !== -1) {
+                products[idx].inStock = !products[idx].inStock;
+                saveProducts(products);
+                renderProducts('ALL');
+                loadDashboard(JSON.parse(localStorage.getItem('eden_current_user')));
+            }
+        }
+
+        function deleteProduct(id) {
+            if(confirm('পণ্যটি ডিলিট করতে চান?')) {
+                saveProducts(getProducts().filter(p => p.id !== id));
+                renderProducts('ALL');
+                loadDashboard(JSON.parse(localStorage.getItem('eden_current_user')));
+            }
+        }
+
+        function updateOrderStatus(index, newStatus) {
+            let orders = JSON.parse(localStorage.getItem('eden_orders')) || [];
+            let order = orders[index];
+            order.status = newStatus;
+            localStorage.setItem('eden_orders', JSON.stringify(orders));
+
+            let statusMsg = `এদন হস্তশিল্প এন্টারপ্রাইজ — ${order.name}, আপনার "${order.product}" অর্ডারের বর্তমান অবস্থা: *${newStatus}*। ধন্যবাদ!`;
+            sendWhatsAppMessage(order.phone, statusMsg);
+            alert('অর্ডার স্ট্যাটাস আপডেট হয়েছে এবং কাস্টমারের WhatsApp-এ তথ্য পাঠানো হয়েছে!');
+            loadDashboard(JSON.parse(localStorage.getItem('eden_current_user')));
+        }
+
+        function deleteOrder(index) {
+            if(confirm('অর্ডারটি ডিলিট করতে চান?')) {
+                let orders = JSON.parse(localStorage.getItem('eden_orders')) || [];
+                orders.splice(index, 1);
+                localStorage.setItem('eden_orders', JSON.stringify(orders));
+                loadDashboard(JSON.parse(localStorage.getItem('eden_current_user')));
+            }
+        }
+
+        function recordLoginHistory(user) {
+            try {
+                let logs = JSON.parse(localStorage.getItem('eden_login_history')) || [];
+                logs.unshift({
+                    name: user.name,
+                    user: user.user,
+                    role: (user.isAdmin || user.user === 'admin') ? 'Admin' : 'Customer',
+                    time: new Date().toLocaleString()
+                });
+                localStorage.setItem('eden_login_history', JSON.stringify(logs.slice(0, 50)));
+            } catch(e) {}
+        }
+
+        function toggleAuthMode() {
+            let logSec = document.getElementById('loginFormSection');
+            let regSec = document.getElementById('registerFormSection');
+            let isLog = logSec.style.display !== 'none';
+            logSec.style.display = isLog ? 'none' : 'block';
+            regSec.style.display = isLog ? 'block' : 'none';
+        }
+
+        function getUsers() {
+            let users = localStorage.getItem('eden_users');
+            return users ? JSON.parse(users) : [
+                {name: "পলাশ সরেন (Admin)", user: "admin", pass: "12345", isAdmin: true}
+            ];
+        }
+
+        function handleRegister() {
+            let name = document.getElementById('regName').value.trim();
+            let user = document.getElementById('regUser').value.trim();
+            let pass = document.getElementById('regPass').value.trim();
+            if(!name || !user || !pass) { alert('সব ঘর পূরণ করুন!'); return; }
+            let users = getUsers();
+            users.push({name, user, pass, isAdmin: false});
+            localStorage.setItem('eden_users', JSON.stringify(users));
+            alert('অ্যাকাউন্ট তৈরি হয়েছে! এখন লগইন করুন।');
+            toggleAuthMode();
+        }
+
+        function handleLogin() {
+            let userIn = document.getElementById('loginUser').value.trim();
+            let passIn = document.getElementById('loginPass').value.trim();
+            let found = getUsers().find(u => u.user === userIn && u.pass === passIn);
+            if(found) {
+                localStorage.setItem('eden_current_user', JSON.stringify(found));
+                recordLoginHistory(found);
+                loadDashboard(found);
+            } else {
+                alert('ভুল আইডি বা পাসওয়ার্ড!');
+            }
+        }
+
+        function loadDashboard(user) {
+            document.getElementById('loginFormSection').style.display = 'none';
+            document.getElementById('registerFormSection').style.display = 'none';
+            document.getElementById('dashboardSection').style.display = 'block';
+            document.getElementById('welcomeMsg').innerText = `স্বাগতম, ${user.name}!`;
+
+            if(user.isAdmin || user.user === 'admin') {
+                document.getElementById('adminPanel').style.display = 'block';
+                document.getElementById('userPanel').style.display = 'none';
+
+                let s = getSettings();
+                document.getElementById('adminNoticeStatus').value = s.noticeStatus;
+                document.getElementById('adminNoticeText').value = s.noticeText;
+                document.getElementById('adminSlideStatus').value = s.slideStatus;
+                document.getElementById('adminSlideTitle1').value = s.slideTitle1;
+                document.getElementById('adminSlideImg1').value = s.slideImg1;
+                document.getElementById('adminSlideTitle2').value = s.slideTitle2;
+                document.getElementById('adminSlideImg2').value = s.slideImg2;
+
+                let prodBody = document.getElementById('adminProductListBody');
+                prodBody.innerHTML = '';
+                getProducts().forEach(p => {
+                    let stockBtn = p.inStock 
+                        ? `<button class="action-btn-sm" style="background:#2d6a4f;" onclick="toggleProductStock(${p.id})">✓ In Stock</button>`
+                        : `<button class="action-btn-sm" style="background:#d97706;" onclick="toggleProductStock(${p.id})">✕ Stock Out</button>`;
+                    let offerBtn = (p.inSpecialOffer || p.category === 'Special Offers')
+                        ? `<button class="action-btn-sm" style="background:#8c5a2b;" onclick="toggleSpecialOfferFlag(${p.id})">★ In Offer</button>`
+                        : `<button class="action-btn-sm" style="background:#6b6054;" onclick="toggleSpecialOfferFlag(${p.id})">+ Offer</button>`;
+                    
+                    prodBody.innerHTML += `
+                        <tr>
+                            <td><img src="${p.img}" style="width:45px; height:45px; object-fit:cover; border-radius:6px;"></td>
+                            <td><b>${p.name}</b><br><small>${p.category}</small></td>
+                            <td><b style="color:#b91c1c;">৳${p.price}</b> <small>${p.badge || ''}</small></td>
+                            <td><small>${(p.colors||[]).join(', ')}<br>${(p.sizes||[]).join(', ')}</small></td>
+                            <td>
+                                <button class="action-btn-sm" style="background:#1b4332;" onclick="editProduct(${p.id})">✏️ Edit</button>
+                                ${offerBtn} ${stockBtn}
+                                <button class="action-btn-sm" style="background:#dc2626;" onclick="deleteProduct(${p.id})">🗑 Delete</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                let orderBody = document.getElementById('orderTableBody');
+                orderBody.innerHTML = '';
+                let orders = JSON.parse(localStorage.getItem('eden_orders')) || [];
+                if(orders.length === 0) {
+                    orderBody.innerHTML = `<tr><td colspan="5" style="text-align:center;">কোনো অর্ডার নেই।</td></tr>`;
+                } else {
+                    orders.forEach((o, idx) => {
+                        orderBody.innerHTML += `<tr>
+                            <td><b>${o.name}</b><br>${o.phone}</td>
+                            <td>${o.address}<br><small>মন্তব্য: ${o.comment}</small></td>
+                            <td>${o.product}<br><small>${o.details}</small></td>
+                            <td>${o.payment}<br><b style="color:#b91c1c;">${o.total}</b></td>
+                            <td>
+                                <select class="status-select" onchange="updateOrderStatus(${idx}, this.value)">
+                                    <option value="Pending" ${o.status==='Pending'?'selected':''}>Pending</option>
+                                    <option value="Processing" ${o.status==='Processing'?'selected':''}>Processing</option>
+                                    <option value="Delivered" ${o.status==='Delivered'?'selected':''}>Delivered</option>
+                                </select>
+                                <button class="action-btn-sm" style="background:#dc2626;" onclick="deleteOrder(${idx})">Delete</button>
+                            </td>
+                        </tr>`;
+                    });
+                }
+
+                let logBody = document.getElementById('loginHistoryBody');
+                let logs = JSON.parse(localStorage.getItem('eden_login_history')) || [];
+                logBody.innerHTML = logs.length === 0
+                    ? `<tr><td colspan="4" style="text-align:center;">কোনো লগইন হিস্ট্রি নেই।</td></tr>`
+                    : logs.map(l => `<tr><td><b>${l.name}</b></td><td>${l.user}</td><td>${l.role}</td><td>${l.time}</td></tr>`).join('');
+            } else {
+                document.getElementById('adminPanel').style.display = 'none';
+                document.getElementById('userPanel').style.display = 'block';
+                let historyBody = document.getElementById('customerOrderHistoryBody');
+                let orders = JSON.parse(localStorage.getItem('eden_orders')) || [];
+                let myOrders = orders.filter(o => o.phone === user.user || o.name.toLowerCase() === user.name.toLowerCase());
+                historyBody.innerHTML = myOrders.length === 0
+                    ? `<tr><td colspan="5" style="text-align:center;">আপনি এখনো কোনো অর্ডার করেননি।</td></tr>`
+                    : myOrders.map(o => `<tr><td><b>${o.product}</b></td><td>${o.details}</td><td>${o.payment}</td><td><b style="color:#b91c1c;">${o.total}</b></td><td><b>${o.status}</b></td></tr>`).join('');
+            }
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('eden_current_user');
+            document.getElementById('dashboardSection').style.display = 'none';
+            document.getElementById('loginFormSection').style.display = 'block';
+        }
+
+        function renderInfoOnly(type) {
+            let content = document.getElementById('infoContent');
+            if(type === 'about') {
+                content.innerHTML = `<h2>আমাদের সম্পর্কে (EDEN HANDICRAFTS ENTERPRISE)</h2><p><b>এদন হস্তশিল্প এন্টারপ্রাইজ</b> একটি প্রাকৃতিক ও পরিবেশবান্ধব বাঁশ-বেত শিল্প প্রতিষ্ঠান। মূল কারিগর <b>পলাশ সরেন</b>-এর নেতৃত্বে জিয়ল (সইতোল), বদলগাছী, নওগাঁ থেকে আমরা হাতে তৈরি নান্দনিক বাঁশ ও বেতের পণ্য সারাদেশে পৌঁছে দিচ্ছি।</p><p>“প্রকৃতির ছোঁয়ায় আপনার ঘর থাকুক সুন্দর ও নান্দনিক” — এই লক্ষ্য নিয়ে আমরা কাজ করে যাচ্ছি।</p>`;
+            } else if(type === 'delivery') {
+                content.innerHTML = `<h2>ডেলিভারি নীতিমালা</h2><p>নওগাঁ ও বদলগাছীর ভেতরে ১-২ দিনে এবং সারাদেশে কুরিয়ারের মাধ্যমে ৩-৫ কর্মদিবসের মধ্যে হোম ডেলিভারি দেওয়া হয়।</p>`;
+            } else if(type === 'return') {
+                content.innerHTML = `<h2>রিটার্ন ও রিপ্লেসমেন্ট নীতিমালা</h2><p>ডেলিভারির সময় কোনো পণ্য ক্ষতিগ্রস্ত হলে সাথে সাথে আমাদের <b>01406205705</b> নম্বরে যোগাযোগ করলে ফ্রি রিপ্লেসমেন্ট দেওয়া হবে।</p>`;
+            } else if(type === 'how') {
+                content.innerHTML = `<h2>কীভাবে অর্ডার করবেন</h2><p>১. পছন্দের বাঁশ বা বেতের পণ্যটি নির্বাচন করুন।<br>২. ফিনিশিং ও সাইজ বেছে নিয়ে <b>Buy Now</b> বাটনে ক্লিক করুন।<br>৩. নাম, ঠিকানা ও মোবাইল নম্বর দিয়ে অর্ডার কনফার্ম করুন।</p>`;
+            }
+        }
+
+        function loadInfo(type) {
+            renderInfoOnly(type);
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById('infoPage').classList.add('active');
+            currentViewState = { page: 'info', cat: 'ALL', query: '', infoType: type };
+            pushViewHistory(currentViewState);
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = function() {
+            applySiteSettings();
+            renderProducts('ALL');
+            try {
+                history.replaceState({ viewState: { page: 'home', cat: 'ALL', query: '', infoType: '' } }, '', '#eden-home');
+            } catch(e) {}
+            let curr = localStorage.getItem('eden_current_user');
+            if(curr) loadDashboard(JSON.parse(curr));
+        };
+    </script>
+</body>
+</html>
